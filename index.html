@@ -2,113 +2,34 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>SVG Animation</title>
+<title>SVG PreLoader Animation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body data-context="projects" data-index="1">
-		<div class="preloader">
-      		<div class="con-loader"></div>
-      		<svg class="back-loader">
-      			<path fill="#47454d" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
-      		</svg>
-      		<div class="text-loader">chargement</div>
-		</div>
-		<div class="loader">
-			<svg class="pie" width="40" height="40">
-  				<path fill="#FFF" d="M 20 0 A 20 20 0 0 1 20 0 L 20 20 L 20 0"/>
-			</svg>
-		</div>
-		<div class="mask">
-			<svg>
-				<path fill="#47454d" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
-			</svg>
-		</div>
-		<nav class="menu">
-			<ul>
-				<li class="logo"><a href="#" data-context="home" data-index="0">&nbsp;</a></li>
-				<li class="project"><a href="#" data-context="projects" data-index="1">projets</a></li>
-				<li class="contact"><a href="#" data-context="contact" data-index="2">contact</a></li>
-			</ul>
-			<div class="line"></div>
-		</nav>
-		<div class="container">
-			<div class="grid" data-color="#2D2D2D">
-	<div class="cache"></div>
-	<div class="con-box">
-				<a href="#" class="box" data-context="more" data-opacity="0.75">-->
-			<div class="grid-image"><img src="images/luxaqua-design.jpg"></div>
-			<div class="grid-cache" style="background: #022C55;">&nbsp;</div>
-			<svg class="grid-line">
-      			<path fill="#022C55" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
-      		</svg>
-      					<div class="grid-text">
-				<h1>luxaqua</h1>
-				<h2>design</h2>
-			</div>
-			<div class="grid-eye">&nbsp;</div>
-			<div class="grid-zero">&nbsp;</div>
-		</a>
-				<a href="#" class="box" data-context="more" data-opacity="0.75">-->
-			<div class="grid-image"><img src="images/epok-design.jpg"></div>
-			<div class="grid-cache" style="background: #322447;">&nbsp;</div>
-			<svg class="grid-line">
-      			<path fill="#322447" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
-      		</svg>
-      					<div class="grid-black">&nbsp;</div>
-						<div class="grid-text">
-				<h1>epok</h1>
-				<h2>design</h2>
-			</div>
-			<div class="grid-eye">&nbsp;</div>
-			<div class="grid-zero">&nbsp;</div>
-		</a>
-				<a href="#" class="box" data-context="more" data-opacity="0.75">-->
-			<div class="grid-image"><img src="images/izord.jpg"></div>
-			<div class="grid-cache" style="background: #322447;">&nbsp;</div>
-			<svg class="grid-line">
-      			<path fill="#322447" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
-      		</svg>
-      					<div class="grid-text">
-				<h1>izord</h1>
-				<h2>real estate</h2>
-			</div>
-			<div class="grid-eye">&nbsp;</div>
-			<div class="grid-zero">&nbsp;</div>
-		</a>
-				<a href="#" class="box" data-context="more" data-opacity="0.7">-->
-			<div class="grid-image"><img src="images/lena-sanz.jpg"></div>
-			<div class="grid-cache" style="background: #34282c;">&nbsp;</div>
-			<svg class="grid-line">
-      			<path fill="#34282c" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
-      		</svg>
-      					<div class="grid-text">
-				<h1>léna</h1>
-				<h2>sanz</h2>
-			</div>
-			<div class="grid-eye">&nbsp;</div>
-			<div class="grid-zero">&nbsp;</div>
-		</a>
-			</div>
-	<div class="zone">&nbsp;</div>
-	<div class="con-cursor">
-		<div class="cursor">&nbsp;</div>
+<body>
+	<div class="main_loader">
+		<div class="percentage_line"></div>
+		<svg class="main_loader">
+			<path fill="#47454d" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
+		</svg>
+		<div class="loading_msg">Marmik Desai, Front End Developer</div>
 	</div>
-	<div class="zone-text">zone <span>04</span><span class="thin">/06</span></div>
-	<button class="prev">&nbsp;</button>
-	<svg class="line-prev">
-		<path stroke="#FFF" stroke-width="2" d="M 1 19 L 1 19"></path>
-		<path stroke="#FFF" stroke-width="2" d="M 1 18 L 1 18"></path>
-	</svg>
-	<button class="next">&nbsp;</button>
-	<svg class="line-next">
-		<path stroke="#FFF" stroke-width="2" d="M 13 20 L 13 20"></path>
-		<path stroke="#FFF" stroke-width="2" d="M 13 19 L 13 19"></path>
-	</svg>
-</div>		</div>
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js"></script>
-		<script src="http://www.greensock.com/js/1.8/TweenMax.min.js"></script>
-		<script src="js/app.min.js"></script>
-	</body>
+	<div class="img">
+		<img src="images/megan.jpg" />
+	</div>
+	<div class="img">
+		<img src="images/megan.jpg" />
+	</div>
+	<div class="img">
+		<img src="images/megan.jpg" />
+	</div>
+	<div class="img">
+		<img src="images/megan.jpg" />
+	</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/main.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js"></script>
+<script src="http://www.greensock.com/js/1.8/TweenMax.min.js"></script>
+</body>
 </html>

@@ -1,26 +1,22 @@
-var production = !0,
-    local = production ? "/" : "/Dropbox/nz/";
-"function" != typeof Object.create && (Object.create = function(obj) {
-    function F() {}
-    return F.prototype = obj, new F
-}), location.origin || (location.origin = location.protocol + "//" + location.host),
-function($, window) {
-    var oldXHR = $.ajaxSettings.xhr;
-    $.ajaxSettings.xhr = function() {
-        var xhr = oldXHR();
-        return xhr instanceof window.XMLHttpRequest && (xhr.addEventListener ? xhr.addEventListener("progress", this.progress, !1) : xhr.attachEvent && xhr.attachEvent("onprogress", this.progress)), xhr.upload && (xhr.upload.addEventListener ? xhr.upload.addEventListener("progress", this.progress, !1) : xhr.attachEvent && xhr.upload.attachEvent("onprogress", this.progress)), xhr
-    }
-}(jQuery, window),
-function($) {
+(function($) {
     var Parse = {
         init: function(options, elem) {
             var self = this;
-            self.options = $.extend({}, $.fn.parse.options, options), self.elem = $(elem), self.origin = location.origin + local, self.dir = self.origin + "bin/images/projets/", self.transform()
+            self.options = $.extend({}, $.fn.parse.options, options),
+			self.elem = $(elem),
+			self.origin = location.origin, 
+//			alert(self.origin);
+			self.dir = self.origin,
+			self.transform()
+			alert(self.dir);
         },
         transform: function() {
             var self = this,
-                source = self.elem.attr("src").replace(self.dir, "").replace(".jpg", ".jpg");
-            self.transformed = source, self.elem.attr("src", self.transformed), "function" == typeof self.options.callback && self.options.callback.call(self)
+                source = self.elem.attr("src").replace(".jpg", ".jpg");
+				self.transformed = source, 
+				self.elem.attr("src", self.transformed), 
+				"function" == typeof self.options.callback && self.options.callback.call(self)
+//				alert(source);
         }
     };
     $.fn.parse = function(options) {
@@ -31,8 +27,8 @@ function($) {
     }, $.fn.parse.options = {
         callback: function() {}
     }
-}(jQuery),
-function($) {
+})(jQuery);
+(function($) {
     var Preloader = {
         init: function(options, elem) {
             var self = this;
@@ -40,9 +36,9 @@ function($) {
 			self.elem = $(elem).addClass("js"), 
 			self.body = $("body"), 
 			self.color = $("div.container").children("div").data("color"),
-			self.preloader = $("div.preloader"), 
-			self.container = self.preloader.find("div.con-loader"),
-			self.txt = self.preloader.find("div.text-loader").css("color", self.color), 
+			self.preloader = $("div.main_loader"), 
+			self.container = self.preloader.find("div.percentage_line"),
+			self.txt = self.preloader.find("div.loading_msg").css("color", self.color), 
 			self.svg = self.preloader.find("svg"),
 			self.svg.find("path").attr("fill", self.color), 
 			self.deferred = new jQuery.Deferred, 
@@ -65,11 +61,11 @@ function($) {
                 var $this = $(this);
                 $this.parse({
                     callback: function() {
-                        var src = $this.attr("src").replace(location.origin + local, "");
+                        var src = $this.attr("src");
                         self.assets.push(src)
                     }
                 })
-            }), i; length > i; ++i) self.assets.push(location.origin + local + self.options.js[i]);
+            }), i; length > i; ++i) self.assets.push(self.options.js[i]);
             self.query()
         },
         query: function() {
@@ -112,7 +108,7 @@ function($) {
             self.images.each(function(i) {
                 var $this = $(this),
                     src = self.assets[i];
-                $this.attr("src", location.origin + local + src).one("load", function() {
+                $this.attr("src", src).one("load", function() {
                     j++, j == size && (self.container.fadeOut(), self.txt.fadeOut())
                 }).each(function() {
                     this.complete && $(this).load()
@@ -128,8 +124,9 @@ function($) {
     }, $.fn.preloader.options = {
         js: []
     }
-}(jQuery), $(function($) {
+})(jQuery)
+$(function($) {
     $("html").preloader({
-        js: ["js/jquery.imagesloaded.min.js", "js/gsap.min.js", "js/app.min.js"]
+        js: ["js/app.js"]
     })
 });
