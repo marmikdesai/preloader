@@ -1,5 +1,4 @@
 $(function($) {
-	alert(43);
     var viewport = $(window),
         width = viewport.width() / 2,
         height = viewport.height() / 2,
