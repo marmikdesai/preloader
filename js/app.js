@@ -17,7 +17,11 @@ $(function($) {
             y: height
         }, update = function() {
             svg.find("path").attr("d", "M " + a.x + " " + a.y + " L " + b.x + " " + b.y + " L " + c.x + " " + c.y + " L " + d.x + " " + d.y + " Z")
-        }, timeline = new TimelineMax({
+        }, start = function() {
+			$(".main_loader").fadeOut(4000, function(){
+				$(this).hide();
+			});
+		}, timeline = new TimelineMax({
             paused: !0
         });
     timeline.to(a, .6, {
@@ -36,7 +40,7 @@ $(function($) {
         y: viewport.height(),
         ease: Strong.easeInOut,
         onUpdate: update,
-//        onComplete: start
+        onComplete: start
     }, "-=0.45"), timeline.to(d, .6, {
         x: 0,
         y: viewport.height(),
@@ -48,5 +52,4 @@ $(function($) {
         onUpdate: update
     }, "-=0.25"), timeline.play()
 });
-
 

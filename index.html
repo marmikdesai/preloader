@@ -5,10 +5,14 @@
 <title>SVG PreLoader Animation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="main_loader">
+		<div class="loading_msg">
+			Please Wait<span class="num1">.</span><span class="num2">.</span><span class="num3">.</span>
+		</div>
+		<div class="percentage_line"></div>
 		<svg class="main_loader">
 			<path fill="#47454d" d="M 0 0 L 0 0 L 0 0 L 0 0 Z"></path>
 		</svg>
@@ -16,7 +20,7 @@
 	<div class="img">
 		<img src="images/megan.jpg" />
 	</div>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://cde.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
